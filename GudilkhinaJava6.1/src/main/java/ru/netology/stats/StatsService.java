@@ -13,10 +13,7 @@ public class StatsService<count> {
     }
 
     public long averageSelling(long[] sales) {
-        long sum = 0;
-        for (long sale : sales) {
-            sum += sale;
-        }
+        long sum = calculateSum(sales);
         long aver = sum / 12;
         return aver;
     }
@@ -49,11 +46,7 @@ public class StatsService<count> {
     }
 
     public long quantityMonthMinSales(long[] sales) {
-        long sum = 0;
-        for (long sale : sales) {
-            sum += sale;
-        }
-        long aver = sum / 12;
+        long aver = averageSelling(sales);
         int count = 0;
         for (int i = 0; i < sales.length; i++) {
             long sale = sales[i];
@@ -64,11 +57,7 @@ public class StatsService<count> {
         }
 
     public long quantityMonthMaxSales(long[] sales) {
-        long sum = 0;
-        for (long sale : sales) {
-            sum += sale;
-        }
-        long aver = sum / 12;
+        long aver = averageSelling(sales);
         int count = 0;
         for (int i = 0; i < sales.length; i++) {
             long sale = sales[i];
